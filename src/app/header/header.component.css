@@ -1,0 +1,41 @@
+.top-bar {
+  background-color: #A76ED9;
+  color: white;
+  padding: 1rem 3rem 1rem 2rem;  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.menu-icon span {
+  display: block;
+  width:40px;
+  height: 5px;
+  background-color: white;
+}
+
+h1 {
+  margin: 0;
+  font-size: 36;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.profile img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
