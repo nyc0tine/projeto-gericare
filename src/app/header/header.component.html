@@ -1,1 +1,20 @@
-<p>header works!</p>
+<mat-toolbar class="header mat-elevation-z4">
+  <div class="nav-menu-icon">
+    <a (click)="menuAberto = !menuAberto">
+      <i class="material-icons">menu</i>
+    </a>
+  </div>
+
+  <div class="logo-cont">
+    <a routerLink="/">
+      <img class="logo" src="" alt="Logo">
+    </a>
+  </div>
+</mat-toolbar>
+
+<nav class="nav-menu" [class.open]="menuAberto">
+  <a routerLink="/" (click)="menuAberto = false">
+    <i class="material-icons">settings</i>
+    Configuração
+  </a>
+</nav>
