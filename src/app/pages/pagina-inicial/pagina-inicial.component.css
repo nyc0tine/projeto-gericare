@@ -1,0 +1,299 @@
+/* Paleta do app: Roxo principal #9062c9, roxo claro #a48fd3, destaque #A76ED9, rosa claro #f8bdbd, cinza claro #f3e6fa */
+
+/* Ajuste geral do container */
+.agenda-container {
+  background: #fff;
+  min-height: 100vh;
+  padding: 0;
+  font-family: 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
+  position: relative;
+}
+
+/* Calendário mais compacto e com menos margem */
+.agenda-calendar {
+  margin: 64px 0 36px 0;
+  padding-bottom: 4px;
+  box-shadow: 0 2px 8px rgba(144, 98, 201, 0.07);
+  border-radius: 0 0 12px 12px;
+}
+
+.agenda-top {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 8px 0 0 8px;
+}
+
+.agenda-top .material-icons.users {
+  color: #815bd3;
+  font-size: 22px;
+}
+
+.calendar-header {
+  padding: 8px 8px 0 8px;
+  font-size: 1.1rem;
+  gap: 4px;
+  margin-bottom: 15px; /* Espaço entre o header e os dias */
+}
+
+.calendar-header .month {
+  color: #9062c9; /* Roxo principal */
+  font-weight: 500;
+  margin-right: 4px;
+}
+
+.calendar-header .year {
+  color: #A76ED9; /* Destaque */
+  font-weight: 400;
+}
+
+.calendar-header .material-icons {
+  color: #815bd3; /* Roxo claro */
+  font-size: 20px;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.calendar-days {
+  display: flex;
+  flex-direction: row;      /* Garante que os dias fiquem na horizontal */
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 4px;
+  margin-top: 4px;
+  overflow-x: auto;         /* Permite rolar horizontalmente se necessário */
+  gap: 0;
+}
+
+.day {
+  min-width: 36px;         /* Aumenta um pouco para melhor visualização */
+  font-size: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin: 0 2px;
+}
+
+.day .number {
+  font-size: 1rem;
+}
+
+.day.active .number {
+  color: #A76ED9;
+  font-weight: bold;
+}
+
+.day .week {
+  font-size: 0.8rem;
+}
+
+.day .dots {
+  display: flex;
+  gap: 2px;
+  margin-top: 2px;
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot.blue { background: #f8f0f0; } /* Roxo claro */
+.dot.red { background: #a48fd3; }  /* Rosa claro */
+
+.timeline {
+  margin: 0 0 56px 0;
+  padding: 0;
+  position: relative;
+}
+
+.event {
+  display: flex;
+  align-items: center; /* Centraliza verticalmente os itens do evento */
+  min-height: 48px;
+  margin-left: 12px;
+  position: relative;
+}
+
+.event-time {
+  width: 48px;
+  text-align: center; /* Centraliza o horário */
+  color: #a48fd3;
+  font-size: 0.95rem;
+  margin-top: 0;
+  font-weight: 500;
+  line-height: 1.1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.event-time.highlight {
+  color: #A76ED9; /* Destaque */
+  font-weight: bold;
+}
+
+.event-time-sub {
+  font-size: 0.8rem;
+  color: #bdbdbd;
+}
+
+.event-line {
+  width: 2px;
+  background: #f3e6fa;
+  height: 100%;
+  position: absolute;
+  left: 44px;
+  top: 0;
+  z-index: 0;
+}
+
+.event-icon {
+  width: 32px;
+  height: 32px;
+  background: #f3e6fa;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 8px 0 4px;
+  z-index: 1;
+  font-size: 1.2rem;
+  color: #a48fd3;
+}
+
+.event-icon.main {
+  background: #A76ED9;
+  color: #fff;
+}
+
+.event.now .event-icon {
+  background: #f3e6fa;
+  color: #A76ED9;
+}
+
+.event-content {
+  flex: 1;
+  margin-top: 4px;
+  min-width: 0;
+}
+
+.event-title {
+  font-size: 1rem;
+  color: #222;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.event-title.bold {
+  font-weight: bold;
+}
+
+.event-subtitle {
+  font-size: 0.85rem;
+  color: #a48fd3;
+  margin-bottom: 1px;
+}
+
+.event-details {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 0.85rem;
+  color: #a48fd3;
+  margin-top: 1px;
+}
+
+.event-details .material-icons.small {
+  font-size: 1rem;
+  color: #a48fd3;
+}
+
+.event-extra {
+  margin-top: 1px;
+  font-size: 0.85rem;
+}
+
+.dream {
+  color: #a48fd3;
+}
+
+.time {
+  color: #A76ED9;
+  font-weight: 500;
+}
+
+.add-task {
+  background: #A76ED9;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 2px 10px;
+  font-size: 0.9rem;
+  margin-top: 4px;
+  cursor: pointer;
+  position: relative;
+  right: 0;
+  bottom: 0;
+  box-shadow: 0 2px 8px rgba(144, 98, 201, 0.10);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.add-task .material-icons {
+  color: #fff;                 /* Ícone branco */
+  font-size: 1.2rem;
+}
+
+.highlight-box {
+  background: #ffe066;
+  color: #222;
+  border-radius: 4px;
+  padding: 1px 4px;
+  font-size: 0.85rem;
+  margin-left: 2px;
+}
+
+.event-check {
+  width: 28px;
+  height: 28px;
+  margin-left: 4px;
+  border-radius: 50%;
+  border: 2px solid #A76ED9;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.event:last-child .event-line {
+  display: none;
+}
+
+.fab {
+  position: fixed;
+  right: 20px;
+  bottom: 76px;
+  width: 48px;
+  height: 48px;
+  background: #A76ED9;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(144, 98, 201, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1002;
+}
+
+/* Ajuste para o rodapé fixo não sobrepor o conteúdo */
+body, .agenda-container {
+  padding-bottom: 72px;
+}

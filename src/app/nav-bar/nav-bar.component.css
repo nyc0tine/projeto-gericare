@@ -5,7 +5,6 @@
   left: 0;
   width: 100vw;
   background: #fff;
-  /* Linha suave de separação */
   box-shadow: 0 -2px 8px rgba(112, 69, 168, 0.07);
   border-top: 1px solid #e0e0e0;
   display: flex;
@@ -16,15 +15,52 @@
 }
 
 .bottom-nav a {
-  color: #7045a8;
+  color: #A76ED9;
   text-decoration: none;
   font-weight: 500;
   padding: 0.5rem 0.75rem;
   transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.bottom-nav a.active,
-.bottom-nav a:hover {
+.nav-icon.faded span.material-icons,
+.nav-icon span.material-icons {
   color: #A76ED9;
-  border-bottom: 2px solid #A76ED9;
+  font-size: 2.2rem;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-icon.emergency {
+  background: none;
+  border-radius: 0;
+  width: auto;
+  height: auto;
+  margin-top: 0;
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-icon.emergency span.material-icons {
+  color: #814D9F;
+  font-size: 2.2rem;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hover e ativo: escurece o ícone */
+.bottom-nav a:hover .material-icons,
+.bottom-nav a.active .material-icons {
+  color: #7e7e7e !important;
+  transition: color 0.2s;
 }
