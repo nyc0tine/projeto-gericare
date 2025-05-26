@@ -1,0 +1,30 @@
+/* Barra de navegação inferior */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  background: #fff;
+  /* Linha suave de separação */
+  box-shadow: 0 -2px 8px rgba(112, 69, 168, 0.07);
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 56px;
+  z-index: 1001;
+}
+
+.bottom-nav a {
+  color: #7045a8;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  transition: color 0.2s;
+}
+
+.bottom-nav a.active,
+.bottom-nav a:hover {
+  color: #A76ED9;
+  border-bottom: 2px solid #A76ED9;
+}

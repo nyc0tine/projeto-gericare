@@ -1,34 +1,17 @@
 <header class="header">
-<!--Botão do menu-->
- <button class="menu-botao" (click)="toggleMenu()" [class.open]="menuOpen">
-    <span></span>
-    <span></span>
-    <span></span>
- </button>
-    <!--Logo-->
-    <a class="logo" routerLink="/menu-principal">GeriCare</a>
+  <!-- Logo centralizada com texto -->
+  <div class="logotipo">
+    <img class="logo-img" src="https://i.pinimg.com/736x/e7/2f/b4/e72fb408d76d9d449e87b438f007cfac.jpg" alt="Logo" />
+    <span class="logo-text">eriCare</span>
+  </div>
+  
 
-    <!--perfil a direita-->
-    <div class="profile">
-        <button class="profile-btn" title="perfil">
-            <div class="profile">
-  <img src="https://i.pinimg.com/736x/3c/bd/86/3cbd86e0fab831190029fee0ea5bb882.jpg" alt="Foto de Perfil" />
-</div>
-
-        </button>
-    </div>
+  <!-- Perfil à direita -->
+  <div class="profile">
+    <button class="profile-btn" title="perfil">
+      <div class="profile">
+        <img src="https://i.pinimg.com/736x/3c/bd/86/3cbd86e0fab831190029fee0ea5bb882.jpg" alt="Foto de Perfil" />
+      </div>
+    </button>
+  </div>
 </header>
-
-<!-- Overlay escura ao abrir o menu -->
-<div class="overlay" *ngIf="menuOpen" (click)="closeMenu()"></div>
-
-<!-- Menu lateral -->
-<aside class="side-menu" [class.open]="menuOpen">
-  <nav>
-    <a routerLink="/idosos">Idosos Cadastrados</a>
-    <a routerLink="/medicamentos">Medicamentos</a>
-    <a routerLink="/relatorios">Relatórios</a>
-    <a routerLink="/configuracoes">Configurações</a>
-    <a routerLink="/sobre">Sobre</a>
-  </nav>
-</aside>
