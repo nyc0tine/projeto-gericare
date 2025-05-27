@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component'; // Importe o HeaderComponent
 
 @Component({
@@ -11,4 +11,10 @@ import { HeaderComponent } from './header/header.component'; // Importe o Header
 })
 export class AppComponent {
   title = 'projeto-gericare';
+
+  constructor(private router: Router) {}
+
+  isAuthRoute(): boolean {
+    return this.router.url === '/login' || this.router.url === '/cadastro'; 
+  }
 }

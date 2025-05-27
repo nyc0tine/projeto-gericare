@@ -1,2 +1,4 @@
-<app-header></app-header>
-<!-- Outros conteúdos da aplicação -->
+<ng-container *ngIf="!isAuthRoute()">
+  <app-header></app-header>
+</ng-container>
+<router-outlet></router-outlet>

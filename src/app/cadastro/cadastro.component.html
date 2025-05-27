@@ -1,0 +1,17 @@
+<div class="background">
+  <div class="login-container">
+    <h2>CADASTRO</h2>
+
+    <form (ngSubmit)="cadastrar()">
+      <input [(ngModel)]="nome" name="nome" type="text" placeholder="Nome completo" required>
+      <input [(ngModel)]="email" name="email" type="email" placeholder="E-mail" required>
+      <input [(ngModel)]="senha" name="senha" type="password" placeholder="Senha" required>
+      <input [(ngModel)]="confirmarSenha" name="confirmarSenha" type="password" placeholder="Confirmar senha" required>
+      <button type="submit">Cadastrar</button>
+    </form>
+
+    <div class="footer">
+      <a routerLink="/login">Já tem conta? Entrar</a>
+    </div>
+  </div>
+</div>
