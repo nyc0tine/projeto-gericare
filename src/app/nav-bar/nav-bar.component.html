@@ -6,7 +6,15 @@
   <a routerLink="/emergencia" routerLinkActive="active" aria-label="Emergência" class="nav-icon emergency">
     <span class="material-icons">report</span>
   </a>
-  <a routerLink="/notificacoes" routerLinkActive="active" aria-label="Notificações" class="nav-icon faded">
-    <span class="material-icons">notifications</span>
+  <a
+    routerLink="/notificacoes"
+    routerLinkActive="active"
+    aria-label="Notificações"
+    class="nav-icon faded"
+    (click)="alternarNotificacoes(); $event.preventDefault();"
+  >
+    <span class="material-icons">
+      {{ notificacoesAtivas ? 'notifications' : 'notifications_off' }}
+    </span>
   </a>
 </nav>

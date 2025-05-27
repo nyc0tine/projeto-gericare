@@ -25,7 +25,7 @@
 }
 
 .agenda-top .material-icons.users {
-  color: #815bd3;
+  color: #A76ED9;
   font-size: 22px;
 }
 
@@ -37,18 +37,18 @@
 }
 
 .calendar-header .month {
-  color: #9062c9; /* Roxo principal */
+  color: #814D9F; /* Roxo principal */
   font-weight: 500;
   margin-right: 4px;
 }
 
 .calendar-header .year {
-  color: #A76ED9; /* Destaque */
+  color: #814D9F; /* Destaque */
   font-weight: 400;
 }
 
 .calendar-header .material-icons {
-  color: #815bd3; /* Roxo claro */
+  color: #A76ED9; /* Roxo claro */
   font-size: 20px;
   margin-left: 8px;
   cursor: pointer;
