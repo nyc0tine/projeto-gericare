@@ -15,7 +15,8 @@ export class CadastroComponent {
   email: string = '';
   senha: string = '';
   confirmarSenha: string = '';
-
+  
+  
   constructor(private router: Router) {}
 
   cadastrar() {
@@ -23,6 +24,25 @@ export class CadastroComponent {
       alert('As senhas não coincidem!');
       return;
     }
+
+    if (this.nome && this.email && this.senha) {
+      this.usuarios.push({
+        nome: this.nome,
+        email: this.email,
+        senha: this.senha
+      });
+      alert('Cadastro realizado com sucesso!');
+
+      this.nome = '';
+      this.email = '';
+      this.senha = '';
+    } else {
+      alert('Preencha todos os campos!');
+
+    }
+
+
+
 
     // Aqui você incluiria lógica de envio para API ou serviço
     console.log('Cadastro realizado com sucesso:', this.nome, this.email);
