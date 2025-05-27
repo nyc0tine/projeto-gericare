@@ -4,6 +4,7 @@ import { LoginComponent } from './pages/login/login.component';
 
 
 export const routes: Routes = [
-  { path: '', component: PaginaInicialComponent, pathMatch: 'full' }
+  { path: '', component: LoginComponent },
+  { path: 'tela-inicial', component: PaginaInicialComponent, pathMatch: 'full' }
   
 ];
