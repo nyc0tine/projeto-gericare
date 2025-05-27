@@ -1,22 +1,22 @@
-<button routerLink="/pagina-inicial">Entrar</button>
+<div class="background">
+  <div class="login-container">
+    <h2>LOGIN</h2>
 
-<div class="login-container">
-  <h2>LOGIN</h2>
+    <div class="icons">
+      <img src="https://img.icons8.com/color/48/google-logo.png" alt="Google">
+      <img src="https://ibb.co/h1CpBZ3Z" alt="Acuidar">
+      <img src="https://img.icons8.com/ios-filled/50/0077b5/linkedin.png" alt="LinkedIn">
+    </div>
 
-  <div class="icons">
-    <img src="https://img.icons8.com/color/48/google-logo.png" alt="Google">
-    <img src="https://img.icons8.com/ios-filled/50/26e07f/brain.png" alt="IA">
-    <img src="https://img.icons8.com/ios-filled/50/0077b5/linkedin.png" alt="LinkedIn">
-  </div>
+    <form (ngSubmit)="login()">
+      <input [(ngModel)]="email" name="email" type="email" placeholder="E-mail" required>
+      <input [(ngModel)]="senha" name="senha" type="password" placeholder="Senha" required>
+      <button type="submit">Entrar</button>
+    </form>
 
-  <form (submit)="login(email, senha); $event.preventDefault();">
-    <input #email type="email" placeholder="E-mail" required>
-    <input #senha type="password" placeholder="Senha" required>
-    <button type="submit" >Entrar</button>
-  </form>
-
-  <div class="footer">
-    <a href="#">Esqueci minha senha</a>
-    <a href="#">Cadastre-se</a>
+    <div class="footer">
+      <a routerLink="/esqueci-senha">Esqueci minha senha</a>
+      <a routerLink="/cadastro">Cadastre-se</a>
+    </div>
   </div>
 </div>

@@ -15,6 +15,7 @@
   padding-bottom: 4px;
   box-shadow: 0 2px 8px rgba(144, 98, 201, 0.07);
   border-radius: 0 0 12px 12px;
+  background: #f3e6fa; /* Fundo acinzentado claro para destacar o calendário */
 }
 
 .agenda-top {
@@ -144,33 +145,51 @@
   color: #bdbdbd;
 }
 
-.event-line {
-  width: 2px;
-  background: #f3e6fa;
-  height: 100%;
-  position: absolute;
-  left: 44px;
-  top: 0;
-  z-index: 0;
-}
-
 .event-icon {
   width: 32px;
   height: 32px;
-  background: #f3e6fa;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 8px 0 4px;
-  z-index: 1;
   font-size: 1.2rem;
-  color: #a48fd3;
+  transition: background 0.2s, color 0.2s;
 }
 
 .event-icon.main {
+  color: #A76ED9;
+  transition: color 0.2s;
+}
+
+/* Fundo claro, ícone roxo */
+.event-icon.main.icon-alt-a {
+  background: #f3e6fa;
+}
+.event-icon.main.icon-alt-a .material-icons,
+.event-icon.main.icon-alt-a .custom-dot {
+  color: #A76ED9;
+  background: transparent;
+}
+
+/* Fundo roxo, ícone claro */
+.event-icon.main.icon-alt-b {
   background: #A76ED9;
-  color: #fff;
+}
+.event-icon.main.icon-alt-b .material-icons,
+.event-icon.main.icon-alt-b .custom-dot {
+  color: #f3e6fa;
+  background: transparent;
+}
+
+/* Quando concluída, tudo fica cinza */
+.event-icon.main.icon-concluida {
+  background: #aaa !important;
+}
+.event-icon.main.icon-concluida .material-icons,
+.event-icon.main.icon-concluida .custom-dot {
+  color: #fff !important;
+  background: transparent !important;
 }
 
 .event.now .event-icon {
@@ -262,15 +281,31 @@
 }
 
 .event-check {
-  width: 28px;
-  height: 28px;
-  margin-left: 4px;
+  width: 22px;
+  height: 22px;
+  margin-right: 12px;
   border-radius: 50%;
-  border: 2px solid #A76ED9;
-  background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  color: #A76ED9;
+  font-size: 22px;
+  transition: color 0.2s;
+  float: left;
+}
+
+.event-check.checked {
+  color: #888;
+}
+
+.event-content .event-title {
+  transition: color 0.2s, text-decoration 0.2s;
+}
+
+.event.concluida .event-title {
+  color: #aaa;
+  text-decoration: line-through;
 }
 
 .event:last-child .event-line {
@@ -299,4 +334,73 @@
 /* Ajuste para o rodapé fixo não sobrepor o conteúdo */
 body, .agenda-container {
   padding-bottom: 72px;
+}
+
+.custom-dot {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background: #A76ED9;
+  border-radius: 50%;
+  margin: 0 auto;
+  transition: background 0.2s;
+}
+
+.custom-dot.checked {
+  background: #aaa;
+}
+
+.event-icon.main .material-icons {
+  color: #A76ED9;
+  font-size: 28px;
+  transition: color 0.2s;
+}
+
+.event-icon.main .material-icons.icon-concluida {
+  color: #aaa;
+}
+
+/* Estilos para o perfil do idoso */
+
+.perfil-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: 16px;
+  margin-top: 72px; /* Espaço suficiente para não ser coberto pelo header fixo */
+  margin-bottom: 8px;
+}
+
+.perfil-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+}
+
+.add-idoso-container {
+  margin: 0;
+}
+
+.add-idoso-btn {
+  background: #a76ed9;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.perfil-idoso {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #A76ED9;
+  background: #fff;
+  margin-right: 8px;
 }

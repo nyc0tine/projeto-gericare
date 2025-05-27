@@ -11,7 +11,7 @@
   justify-content: space-around;
   align-items: center;
   height: 56px;
-  z-index: 1001;
+  z-index: auto;
 }
 
 .bottom-nav a {
@@ -51,8 +51,8 @@
 .nav-icon.emergency span.material-icons {
   color: #814D9F;
   font-size: 2.2rem;
-  width: 55px;
-  height: 55px;
+  width: 65px;
+  height: 65px;
   display: flex;
   align-items: center;
   justify-content: center;
