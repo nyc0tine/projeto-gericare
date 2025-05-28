@@ -8,8 +8,6 @@ import { NavBarComponent } from './nav-bar/nav-bar.component'; // Importe o NavB
   standalone: true,
   imports: [RouterOutlet, HeaderComponent, NavBarComponent], // Adicione o NavBarComponent aqui
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'projeto-gericare';
-}
+export class AppComponent {}

@@ -7,6 +7,9 @@ import { EsqueciSenhaComponent } from './pages/esqueci-senha/esqueci-senha.compo
 import { LoadingComponent } from './pages/loading/loading.component';
 import { AdicionarIdosoComponent } from './pages/adicionar-idoso/adicionar-idoso.component'; // ajuste o caminho conforme seu projeto
 import { InfoIdosoComponent } from './pages/info-idoso/info-idoso.component'; // ajuste o caminho se necessário
+import { IdosoListaComponent } from './idoso/idoso-lista.component';
+import { IdosoRelatorioComponent } from './idoso/idoso-relatorio.component';
+import { IdosoEditarComponent } from './idoso/idoso-editar.component';
 
 
 export const routes: Routes = [
@@ -18,6 +21,9 @@ export const routes: Routes = [
   { path: 'pagina-inicial', component: PaginaInicialComponent, pathMatch: 'full' },
   { path: 'adicionar-idoso', component: AdicionarIdosoComponent },
   { path: 'info-idoso/:nome', component: InfoIdosoComponent },
+  { path: '', component: IdosoListaComponent },
+  { path: 'idoso/:id', component: IdosoRelatorioComponent },
+  { path: 'idoso/:id/editar', component: IdosoEditarComponent }
 ];
 
 @NgModule({
@@ -25,3 +31,4 @@ export const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+

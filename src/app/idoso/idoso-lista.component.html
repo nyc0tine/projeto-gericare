@@ -1,0 +1,9 @@
+<div class="idoso-lista-container">
+  <h2>Idosos cadastrados</h2>
+  <ul class="idoso-lista">
+    <li *ngFor="let idoso of idosos" (click)="verRelatorio(idoso.id)">
+      <img [src]="idoso.imagem" alt="Foto" />
+      {{ idoso.nome }}
+    </li>
+  </ul>
+</div>

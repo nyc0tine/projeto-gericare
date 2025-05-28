@@ -1,0 +1,27 @@
+<div *ngIf="idoso" class="idoso-card">
+  <div class="idoso-header">
+    <img [src]="idoso.imagem" alt="Foto do Idoso" class="idoso-foto" />
+    <div>
+      <h1>
+        <b>Nome:</b>
+        <input type="text" [(ngModel)]="idoso.nome" class="input-edit" />
+      </h1>
+      <p>
+        <b>Idade:</b>
+        <input type="number" [(ngModel)]="idoso.idade" class="input-edit" style="width:60px" /> anos
+      </p>
+      <p>
+        <b>Tipo Sanguíneo:</b>
+        <input type="text" [(ngModel)]="idoso.tipoSanguineo" class="input-edit" />
+      </p>
+      <p>
+        <b>Enfermidades:</b>
+        <input type="text" [ngModel]="idoso.enfermidades ? idoso.enfermidades.join(', ') : ''" (ngModelChange)="onEnfermidadesChange($event)" class="input-edit" />
+      </p>
+    </div>
+  </div>
+  <div class="idoso-actions">
+    <button type="button" (click)="salvar()" class="btn-salvar">Salvar</button>
+    <button type="button" (click)="descartar()" class="btn-descartar">Descartar alterações</button>
+  </div>
+</div>
