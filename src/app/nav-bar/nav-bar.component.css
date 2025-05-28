@@ -1,4 +1,4 @@
-  /* Barra de navegação inferior */
+/* Barra de navegação inferior */
 .bottom-nav {
   position: fixed;
   bottom: 0;
@@ -63,4 +63,16 @@
 .bottom-nav a.active .material-icons {
   color: #7e7e7e !important;
   transition: color 0.2s;
+}
+
+.nav-icon {
+  cursor: pointer;
+}
+
+.nav-icon .material-icons {
+  transition: color 0.2s;
+}
+
+.nav-icon:hover .material-icons {
+  color: #9062c9; /* Ou a cor que preferir para o hover */
 }

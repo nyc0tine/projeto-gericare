@@ -21,7 +21,7 @@ export const routes: Routes = [
   { path: 'pagina-inicial', component: PaginaInicialComponent, pathMatch: 'full' },
   { path: 'adicionar-idoso', component: AdicionarIdosoComponent },
   { path: 'info-idoso/:nome', component: InfoIdosoComponent },
-  { path: '', component: IdosoListaComponent },
+  { path: 'idoso-lista', component: IdosoListaComponent },
   { path: 'idoso/:id', component: IdosoRelatorioComponent },
   { path: 'idoso/:id/editar', component: IdosoEditarComponent }
 ];
