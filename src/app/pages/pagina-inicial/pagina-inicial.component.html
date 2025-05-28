@@ -1,7 +1,11 @@
 <!-- Seleção de perfis do idoso -->
 <div class="perfil-row">
   <div class="perfil-container">
-    <img [src]="perfilImagem" alt="Perfil" class="perfil-idoso" />
+    <img [src]="perfilImagem"
+         alt="Perfil"
+         class="perfil-idoso"
+         (click)="abrirInfoIdoso()" 
+         style="cursor:pointer;" />
     <select id="perfilIdoso" [(ngModel)]="perfilSelecionado" (ngModelChange)="atualizarImagemPerfil()" class="perfil-select">
       <option *ngFor="let perfil of perfis" [value]="perfil">{{ perfil }}</option>
     </select>
@@ -19,27 +23,25 @@
   <div class="agenda-calendar">
     <div class="calendar-header">
       <span class="month">maio <span class="year">2025</span></span>
-      <span class="material-icons">calendar_month</span>
+      <!-- <span class="material-icons">calendar_month</span>
       <span class="material-icons">view_week</span>
       <span class="material-icons">view_module</span>
-      <span class="material-icons">settings</span>
+      <span class="material-icons">settings</span> -->
     </div>
     <div class="calendar-days">
-      <div class="day active">
-        <span class="number">26</span>
-        <span class="week">seg</span>
+      <div
+        class="day"
+        *ngFor="let d of diasDoMes"
+        [class.active]="d.dia === hoje"
+      >
+        <span class="number">{{ d.dia }}</span>
+        <span class="week">{{ d.semana }}</span>
         <div class="dots">
           <span class="dot blue"></span>
           <span class="dot red"></span>
           <span class="dot blue"></span>
         </div>
       </div>
-      <div class="day"><span class="number">27</span><span class="week">ter</span></div>
-      <div class="day"><span class="number">28</span><span class="week">qua</span></div>
-      <div class="day"><span class="number">29</span><span class="week">qui</span></div>
-      <div class="day"><span class="number">30</span><span class="week">sex</span></div>
-      <div class="day"><span class="number">31</span><span class="week">sáb</span></div>
-      <div class="day"><span class="number">1</span><span class="week">dom</span></div>
     </div>
   </div>
 

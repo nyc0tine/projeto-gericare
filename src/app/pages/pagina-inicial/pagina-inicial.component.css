@@ -11,7 +11,7 @@
 
 /* Calendário mais compacto e com menos margem */
 .agenda-calendar {
-  margin: 64px 0 36px 0;
+  margin: 24px 0 20px 0; /* Subiu o calendário e diminuiu o espaço inferior */
   padding-bottom: 4px;
   box-shadow: 0 2px 8px rgba(144, 98, 201, 0.07);
   border-radius: 0 0 12px 12px;
@@ -106,6 +106,7 @@
 .dot.red { background: #a48fd3; }  /* Rosa claro */
 
 .timeline {
+  margin-top: 0; /* Remove qualquer espaço extra acima da timeline */
   margin: 0 auto 56px auto;   /* Centraliza horizontalmente */
   padding: 0;
   display: flex;
@@ -271,6 +272,10 @@
   font-size: 1.2rem;
 }
 
+.add-task-form {
+  margin-top: 12px; /* Menor espaço acima do formulário */
+}
+
 .highlight-box {
   background: #ffe066;
   color: #222;
@@ -315,7 +320,7 @@
 .fab {
   position: fixed;
   right: 20px;
-  bottom: 76px;
+  bottom: 100px !important; /* Sobe o botão flutuante para cima do rodapé */
   width: 48px;
   height: 48px;
   background: #A76ED9;
@@ -367,7 +372,7 @@ body, .agenda-container {
   align-items: center;
   gap: 12px;
   margin-left: 16px;
-  margin-top: 72px; /* Espaço suficiente para não ser coberto pelo header fixo */
+  margin-top: 100px; /* Espaço suficiente para não ser coberto pelo header fixo */
   margin-bottom: 8px;
 }
 
@@ -396,11 +401,74 @@ body, .agenda-container {
 }
 
 .perfil-idoso {
-  width: 32px;
-  height: 32px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid #A76ED9;
   background: #fff;
   margin-right: 8px;
+}
+
+.perfil-select {
+  padding: 6px 16px 6px 10px;
+  border-radius: 20px;
+  border: 1.5px solid #A76ED9;
+  background: #f3e6fa;
+  color: #814D9F;
+  font-size: 1rem;
+  font-family: 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 500;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(144, 98, 201, 0.07);
+  margin-left: 4px;
+}
+
+.perfil-select:focus {
+  border: 2px solid #9062c9;
+  background: #fff;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: #d32f2f;
+  cursor: pointer;
+  margin-left: 8px;
+  vertical-align: middle;
+  font-size: 1.2rem;
+}
+
+.edit-btn {
+  background: none;
+  border: none;
+  color: #A76ED9;
+  cursor: pointer;
+  margin-left: 8px;
+  vertical-align: middle;
+  font-size: 1.2rem;
+}
+
+.evento-item {
+  margin-bottom: 10px;
+}
+
+.evento-conteudo.selecionado {
+  background: #f0f0f0;
+  border-radius: 6px;
+}
+
+.bolinha.preenchida {
+  background: #4caf50 !important;
+}
+
+span.concluida {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.evento-opcoes button {
+  margin-right: 8px;
+  font-size: 0.95em;
 }
