@@ -4,9 +4,11 @@
 
     <div class="icons">
       <img src="https://img.icons8.com/color/48/google-logo.png" alt="Google">
-      <img src="https://ibb.co/h1CpBZ3Z" alt="Acuidar">
+      <img src="https://i.ibb.co/qFxbNWTW/acuidar.png" alt="Acuidar">
       <img src="https://img.icons8.com/ios-filled/50/0077b5/linkedin.png" alt="LinkedIn">
     </div>
+
+    <div *ngIf="mensagemErro" class="mensagem-erro">{{ mensagemErro }}</div>
 
     <form (ngSubmit)="login()">
       <input [(ngModel)]="email" name="email" type="email" placeholder="E-mail" required>

@@ -1,4 +1,4 @@
-/* Barra de navegação inferior */
+  /* Barra de navegação inferior */
 .bottom-nav {
   position: fixed;
   bottom: 0;
@@ -11,7 +11,7 @@
   justify-content: space-around;
   align-items: center;
   height: 56px;
-  z-index: auto;
+  z-index: 1001;
 }
 
 .bottom-nav a {
@@ -51,8 +51,8 @@
 .nav-icon.emergency span.material-icons {
   color: #814D9F;
   font-size: 2.2rem;
-  width: 65px;
-  height: 65px;
+  width: 55px;
+  height: 55px;
   display: flex;
   align-items: center;
   justify-content: center;

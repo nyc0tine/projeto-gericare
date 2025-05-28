@@ -37,17 +37,6 @@ h2 {
   margin-bottom: 20px;
 }
 
-.icons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-bottom: 20px;
-}
-
-.icons img {
-  width: 30px;
-  cursor: pointer;
-}
 
 form {
   display: flex;
@@ -89,17 +78,4 @@ button {
 .footer a {
   text-decoration: none;
   color: #73268d;
-}
-
-.mensagem-erro {
-  color: #c0392b;
-  background: #fbeaea;
-  border: 1.5px solid #e57373;
-  border-radius: 8px;
-  padding: 10px 16px;
-  margin-bottom: 16px;
-  width: 100%;
-  text-align: center;
-  font-weight: bold;
-  box-shadow: 0 2px 8px #e5737322;
 }
