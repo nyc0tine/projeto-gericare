@@ -1,0 +1,474 @@
+/* Paleta do app: Roxo principal #9062c9, roxo claro #a48fd3, destaque #A76ED9, rosa claro #f8bdbd, cinza claro #f3e6fa */
+
+/* Ajuste geral do container */
+.agenda-container {
+  background: #fff;
+  min-height: 100vh;
+  padding: 0;
+  font-family: 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
+  position: relative;
+}
+
+/* Calendário mais compacto e com menos margem */
+.agenda-calendar {
+  margin: 24px 0 20px 0; /* Subiu o calendário e diminuiu o espaço inferior */
+  padding-bottom: 4px;
+  box-shadow: 0 2px 8px rgba(144, 98, 201, 0.07);
+  border-radius: 0 0 12px 12px;
+  background: #f3e6fa; /* Fundo acinzentado claro para destacar o calendário */
+}
+
+.agenda-top {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 8px 0 0 8px;
+}
+
+.agenda-top .material-icons.users {
+  color: #A76ED9;
+  font-size: 22px;
+}
+
+.calendar-header {
+  padding: 8px 8px 0 8px;
+  font-size: 1.1rem;
+  gap: 4px;
+  margin-bottom: 15px; /* Espaço entre o header e os dias */
+}
+
+.calendar-header .month {
+  color: #814D9F; /* Roxo principal */
+  font-weight: 500;
+  margin-right: 4px;
+}
+
+.calendar-header .year {
+  color: #814D9F; /* Destaque */
+  font-weight: 400;
+}
+
+.calendar-header .material-icons {
+  color: #A76ED9; /* Roxo claro */
+  font-size: 20px;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.calendar-days {
+  display: flex;
+  flex-direction: row;      /* Garante que os dias fiquem na horizontal */
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 4px;
+  margin-top: 4px;
+  overflow-x: auto;         /* Permite rolar horizontalmente se necessário */
+  gap: 0;
+}
+
+.day {
+  min-width: 36px;         /* Aumenta um pouco para melhor visualização */
+  font-size: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin: 0 2px;
+}
+
+.day .number {
+  font-size: 1rem;
+}
+
+.day.active .number {
+  color: #A76ED9;
+  font-weight: bold;
+}
+
+.day .week {
+  font-size: 0.8rem;
+}
+
+.day .dots {
+  display: flex;
+  gap: 2px;
+  margin-top: 2px;
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot.blue { background: #f8f0f0; } /* Roxo claro */
+.dot.red { background: #a48fd3; }  /* Rosa claro */
+
+.timeline {
+  margin-top: 0; /* Remove qualquer espaço extra acima da timeline */
+  margin: 0 auto 56px auto;   /* Centraliza horizontalmente */
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: left;        /* Centraliza os eventos dentro da timeline */
+  width: fit-content;
+}
+
+.event {
+  display: flex;
+  align-items: center; /* Centraliza verticalmente os itens do evento */
+  min-height: 48px;
+  margin-left: 12px;
+  position: relative;
+}
+
+.event-time {
+  width: 48px;
+  text-align: center; /* Centraliza o horário */
+  color: #a48fd3;
+  font-size: 0.95rem;
+  margin-top: 0;
+  font-weight: 500;
+  line-height: 1.1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.event-time.highlight {
+  color: #A76ED9; /* Destaque */
+  font-weight: bold;
+}
+
+.event-time-sub {
+  font-size: 0.8rem;
+  color: #bdbdbd;
+}
+
+.event-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 8px 0 4px;
+  font-size: 1.2rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.event-icon.main {
+  color: #A76ED9;
+  transition: color 0.2s;
+}
+
+/* Fundo claro, ícone roxo */
+.event-icon.main.icon-alt-a {
+  background: #f3e6fa;
+}
+.event-icon.main.icon-alt-a .material-icons,
+.event-icon.main.icon-alt-a .custom-dot {
+  color: #A76ED9;
+  background: transparent;
+}
+
+/* Fundo roxo, ícone claro */
+.event-icon.main.icon-alt-b {
+  background: #A76ED9;
+}
+.event-icon.main.icon-alt-b .material-icons,
+.event-icon.main.icon-alt-b .custom-dot {
+  color: #f3e6fa;
+  background: transparent;
+}
+
+/* Quando concluída, tudo fica cinza */
+.event-icon.main.icon-concluida {
+  background: #aaa !important;
+}
+.event-icon.main.icon-concluida .material-icons,
+.event-icon.main.icon-concluida .custom-dot {
+  color: #fff !important;
+  background: transparent !important;
+}
+
+.event.now .event-icon {
+  background: #f3e6fa;
+  color: #A76ED9;
+}
+
+.event-content {
+  flex: 1;
+  margin-top: 4px;
+  min-width: 0;
+}
+
+.event-title {
+  font-size: 1rem;
+  color: #222;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.event-title.bold {
+  font-weight: bold;
+}
+
+.event-subtitle {
+  font-size: 0.85rem;
+  color: #a48fd3;
+  margin-bottom: 1px;
+}
+
+.event-details {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 0.85rem;
+  color: #a48fd3;
+  margin-top: 1px;
+}
+
+.event-details .material-icons.small {
+  font-size: 1rem;
+  color: #a48fd3;
+}
+
+.event-extra {
+  margin-top: 1px;
+  font-size: 0.85rem;
+}
+
+.dream {
+  color: #a48fd3;
+}
+
+.time {
+  color: #A76ED9;
+  font-weight: 500;
+}
+
+.add-task {
+  background: #A76ED9;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 2px 10px;
+  font-size: 0.9rem;
+  margin-top: 4px;
+  cursor: pointer;
+  position: relative;
+  right: 0;
+  bottom: 0;
+  box-shadow: 0 2px 8px rgba(144, 98, 201, 0.10);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.add-task .material-icons {
+  color: #fff;                 /* Ícone branco */
+  font-size: 1.2rem;
+}
+
+.add-task-form {
+  margin-top: 12px; /* Menor espaço acima do formulário */
+}
+
+.highlight-box {
+  background: #ffe066;
+  color: #222;
+  border-radius: 4px;
+  padding: 1px 4px;
+  font-size: 0.85rem;
+  margin-left: 2px;
+}
+
+.event-check {
+  width: 22px;
+  height: 22px;
+  margin-right: 12px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #A76ED9;
+  font-size: 22px;
+  transition: color 0.2s;
+  float: left;
+}
+
+.event-check.checked {
+  color: #888;
+}
+
+.event-content .event-title {
+  transition: color 0.2s, text-decoration 0.2s;
+}
+
+.event.concluida .event-title {
+  color: #aaa;
+  text-decoration: line-through;
+}
+
+.event:last-child .event-line {
+  display: none;
+}
+
+.fab {
+  position: fixed;
+  right: 20px;
+  bottom: 100px !important; /* Sobe o botão flutuante para cima do rodapé */
+  width: 48px;
+  height: 48px;
+  background: #A76ED9;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(144, 98, 201, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1002;
+}
+
+/* Ajuste para o rodapé fixo não sobrepor o conteúdo */
+body, .agenda-container {
+  padding-bottom: 72px;
+}
+
+.custom-dot {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background: #A76ED9;
+  border-radius: 50%;
+  margin: 0 auto;
+  transition: background 0.2s;
+}
+
+.custom-dot.checked {
+  background: #aaa;
+}
+
+.event-icon.main .material-icons {
+  color: #A76ED9;
+  font-size: 28px;
+  transition: color 0.2s;
+}
+
+.event-icon.main .material-icons.icon-concluida {
+  color: #aaa;
+}
+
+/* Estilos para o perfil do idoso */
+
+.perfil-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: 16px;
+  margin-top: 100px; /* Espaço suficiente para não ser coberto pelo header fixo */
+  margin-bottom: 8px;
+}
+
+.perfil-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+}
+
+.add-idoso-container {
+  margin: 0;
+}
+
+.add-idoso-btn {
+  background: #a76ed9;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.perfil-idoso {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #A76ED9;
+  background: #fff;
+  margin-right: 8px;
+}
+
+.perfil-select {
+  padding: 6px 16px 6px 10px;
+  border-radius: 20px;
+  border: 1.5px solid #A76ED9;
+  background: #f3e6fa;
+  color: #814D9F;
+  font-size: 1rem;
+  font-family: 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 500;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(144, 98, 201, 0.07);
+  margin-left: 4px;
+}
+
+.perfil-select:focus {
+  border: 2px solid #9062c9;
+  background: #fff;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: #d32f2f;
+  cursor: pointer;
+  margin-left: 8px;
+  vertical-align: middle;
+  font-size: 1.2rem;
+}
+
+.edit-btn {
+  background: none;
+  border: none;
+  color: #A76ED9;
+  cursor: pointer;
+  margin-left: 8px;
+  vertical-align: middle;
+  font-size: 1.2rem;
+}
+
+.evento-item {
+  margin-bottom: 10px;
+}
+
+.evento-conteudo.selecionado {
+  background: #f0f0f0;
+  border-radius: 6px;
+}
+
+.bolinha.preenchida {
+  background: #4caf50 !important;
+}
+
+span.concluida {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.evento-opcoes button {
+  margin-right: 8px;
+  font-size: 0.95em;
+}

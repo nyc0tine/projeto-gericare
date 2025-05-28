@@ -1,0 +1,45 @@
+.loading-container {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #A76ED9;
+    transition: transform 0.6s cubic-bezier(0.4,0,0.2,1), opacity 0.6s;
+}
+
+.logo-img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.logotipo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: blink 1.2s infinite;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    margin-left: 0;
+    margin-top: 4px;
+    color: white;
+    animation: blink 1.2s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+.slide-up {
+    transform: translateY(-100vh);
+    opacity: 0;
+}

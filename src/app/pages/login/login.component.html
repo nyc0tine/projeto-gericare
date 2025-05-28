@@ -1,0 +1,24 @@
+<div class="background">
+  <div class="login-container">
+    <h2>LOGIN</h2>
+
+    <div class="icons">
+      <img src="https://img.icons8.com/color/48/google-logo.png" alt="Google">
+      <img src="https://i.ibb.co/qFxbNWTW/acuidar.png" alt="Acuidar">
+      <img src="https://img.icons8.com/ios-filled/50/0077b5/linkedin.png" alt="LinkedIn">
+    </div>
+
+    <div *ngIf="mensagemErro" class="mensagem-erro">{{ mensagemErro }}</div>
+
+    <form (ngSubmit)="login()">
+      <input [(ngModel)]="email" name="email" type="email" placeholder="E-mail" required>
+      <input [(ngModel)]="senha" name="senha" type="password" placeholder="Senha" required>
+      <button type="submit">Entrar</button>
+    </form>
+
+    <div class="footer">
+      <a routerLink="/esqueci-senha">Esqueci minha senha</a>
+      <a routerLink="/cadastro">Cadastre-se</a>
+    </div>
+  </div>
+</div>

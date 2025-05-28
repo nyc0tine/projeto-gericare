@@ -1,0 +1,96 @@
+<!-- Seleção de perfis do idoso -->
+<div class="perfil-row">
+  <div class="perfil-container">
+    <img [src]="perfilImagem"
+         alt="Perfil"
+         class="perfil-idoso"
+         (click)="abrirInfoIdoso()" 
+         style="cursor:pointer;" />
+    <select id="perfilIdoso" [(ngModel)]="perfilSelecionado" (ngModelChange)="atualizarImagemPerfil()" class="perfil-select">
+      <option *ngFor="let perfil of perfis" [value]="perfil">{{ perfil }}</option>
+    </select>
+  </div>
+  <div class="add-idoso-container">
+    <button class="add-idoso-btn" (click)="adicionarIdoso()">
+      <span class="material-icons">person_add</span>
+    </button>
+  </div>
+</div>
+
+<!-- Agenda com calendário e eventos -->
+<div class="agenda-container">
+  <!-- Calendário -->
+  <div class="agenda-calendar">
+    <div class="calendar-header">
+      <span class="month">maio <span class="year">2025</span></span>
+      <!-- <span class="material-icons">calendar_month</span>
+      <span class="material-icons">view_week</span>
+      <span class="material-icons">view_module</span>
+      <span class="material-icons">settings</span> -->
+    </div>
+    <div class="calendar-days">
+      <div
+        class="day"
+        *ngFor="let d of diasDoMes"
+        [class.active]="d.dia === hoje"
+      >
+        <span class="number">{{ d.dia }}</span>
+        <span class="week">{{ d.semana }}</span>
+        <div class="dots">
+          <span class="dot blue"></span>
+          <span class="dot red"></span>
+          <span class="dot blue"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Linha do tempo dos eventos -->
+  <div class="timeline">
+    <div class="event" *ngFor="let evento of eventosOrdenados; let i = index" [class.concluida]="evento.concluida">
+      <div class="event-check" [class.checked]="evento.concluida" (click)="toggleConclusao(evento)">
+        <ng-container *ngIf="evento.concluida; else emptyCircle">
+          <span class="material-icons">check_circle</span>
+        </ng-container>
+        <ng-template #emptyCircle>
+          <span class="material-icons">radio_button_unchecked</span>
+        </ng-template>
+      </div>
+      <div class="event-time">{{ evento.horario }}</div>
+      <div class="event-icon main"
+           [ngClass]="{
+             'icon-alt-a': i % 2 === 0,
+             'icon-alt-b': i % 2 === 1,
+             'icon-concluida': evento.concluida
+           }">
+        <ng-container *ngIf="evento.titulo === 'Desacelerar'; else customOrDefault">
+          <span class="material-icons">nightlight_round</span>
+        </ng-container>
+        <ng-template #customOrDefault>
+          <ng-container *ngIf="evento.custom; else defaultIcon">
+            <span class="custom-dot" [class.checked]="evento.concluida"></span>
+          </ng-container>
+          <ng-template #defaultIcon>
+            <span class="material-icons">alarm</span>
+          </ng-template>
+        </ng-template>
+      </div>
+      <div class="event-content">
+        <div class="event-title bold">{{ evento.titulo }}</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Formulário para adicionar tarefa -->
+  <div *ngIf="mostrarFormulario" class="add-task-form">
+    <input type="time" [(ngModel)]="novoHorario" required>
+    <input type="text" [(ngModel)]="novoTitulo" placeholder="Título da tarefa" required>
+    <button (click)="adicionarEvento()">Adicionar</button>
+    <button (click)="cancelar()" type="button">Cancelar</button>
+  </div>
+
+  <!-- Botão flutuante -->
+  <button class="fab" (click)="abrirFormulario()">
+    <span class="material-icons">add</span>
+  </button>
+</div>
